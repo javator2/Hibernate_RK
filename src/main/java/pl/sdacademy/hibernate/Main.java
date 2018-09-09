@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import pl.sdacademy.hibernate.entity.Book;
 import pl.sdacademy.hibernate.entity.Category;
+import pl.sdacademy.hibernate.entity.Publisher;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -43,7 +44,7 @@ public class Main {
 
         Category category1 = new Category("bazy danych");
         Category category2 = new Category("programowanie java");
-        Book book3 = new Book("Bazy danych MySQL", "234-432","Marian Kowalski", category1);
+        Book book3 = new Book("Bazy danych MySQL", "234-432","Marian Kowalski", category1, new Publisher("PWN", "ul. Dluga 5", "Warszawa"));
 
         Session session = getSession();
         Transaction tx = session.getTransaction();

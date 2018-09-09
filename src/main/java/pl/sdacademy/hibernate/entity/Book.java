@@ -15,12 +15,15 @@ public class Book {
     private String author;
     @ManyToOne(cascade = CascadeType.ALL) //dodajemy kaskadowosc aby utworzylo kategorie a pozniej dodalo ksiazki
     private Category category;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Publisher publisher;
 
-    public Book(String title, String isbn, String author, Category category) {
+    public Book(String title, String isbn, String author, Category category, Publisher publisher) {
         this.title = title;
         this.isbn = isbn;
         this.author = author;
         this.category = category;
+        this.publisher = publisher;
     }
     public Book(){}
 
@@ -62,5 +65,13 @@ public class Book {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 }

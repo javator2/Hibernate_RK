@@ -25,5 +25,6 @@
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
         <mapping class="pl.sdacademy.hibernate.entity.Book"></mapping>
         <mapping class="pl.sdacademy.hibernate.entity.Category"></mapping>
+        <mapping class="pl.sdacademy.hibernate.entity.Publisher"></mapping>
     </session-factory>
 </hibernate-configuration>
