@@ -1,6 +1,7 @@
 package pl.sdacademy.hibernate.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -11,17 +12,18 @@ public class Book {
     private String title;
     @Column
     private String isbn;
-    @Column
-    private String author;
+
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Author> authors;
     @ManyToOne(cascade = CascadeType.ALL) //dodajemy kaskadowosc aby utworzylo kategorie a pozniej dodalo ksiazki
     private Category category;
     @ManyToOne(cascade = CascadeType.ALL)
     private Publisher publisher;
 
-    public Book(String title, String isbn, String author, Category category, Publisher publisher) {
+    public Book(String title, String isbn, Category category, Publisher publisher) {
         this.title = title;
         this.isbn = isbn;
-        this.author = author;
         this.category = category;
         this.publisher = publisher;
     }
@@ -51,12 +53,12 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public String getAuthor() {
-        return author;
+    public Set<Author> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
     }
 
     public Category getCategory() {

@@ -26,5 +26,6 @@
         <mapping class="pl.sdacademy.hibernate.entity.Book"></mapping>
         <mapping class="pl.sdacademy.hibernate.entity.Category"></mapping>
         <mapping class="pl.sdacademy.hibernate.entity.Publisher"></mapping>
+        <mapping class="pl.sdacademy.hibernate.entity.Author"></mapping>
     </session-factory>
 </hibernate-configuration>
