@@ -21,5 +21,9 @@
         <property name="hibernate.connection.serverTimezone">UCT</property>
         <property name="hibernate.show_sql">true</property>
         <property name="format_sql">true</property>
+        <property name="generate_statistics">true</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <mapping class="pl.sdacademy.hibernate.entity.Book"></mapping>
+        <mapping class="pl.sdacademy.hibernate.entity.Category"></mapping>
     </session-factory>
 </hibernate-configuration>
